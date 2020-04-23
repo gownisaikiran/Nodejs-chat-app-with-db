@@ -1,6 +1,6 @@
 // Make connection
-var socket = io.connect('http://localhost:4000');
-
+// var socket = io.connect('http://localhost:4000');
+var socket = io.connect();
 // if(!localStorage.name)
 // {
     var name = prompt("Please enter your name ?");

@@ -1,11 +1,11 @@
 var express = require('express');
 var socket = require('socket.io');
 var mysql = require('mysql');
-var port = process.env.PORT || 4000;
+var port = process.env.PORT;
 // App setup
 var app = express();
 var server = app.listen(port, function(){
-    console.log('listening for requests on port 4000,');
+    console.log('listening for requests on port');
 });
 
 // Static files (Middleware method : app.use)
@@ -18,10 +18,10 @@ app.use(express.json());
 
 // DataBase Connection
 var con = mysql.createConnection({
-    host: "localhost",
-    user: "root",
-    password: "",
-    database : 'chat_db'
+    host: "sql205.epizy.com",
+    user: "epiz_25609731",
+    password: "Hsvi@123",
+    database : "epiz_25609731_chat_db"
   });
   
 con.connect(function(err) {
@@ -58,7 +58,7 @@ io.on('connection', (socket) => {
     socket.on('disconnect', () => {
         //console.log(Object.keys(users).length)
         //if(true){
-        //console.log(users[socket.id].name+" left chat");
+        console.log(users[socket.id].name+" left chat");
         socket.broadcast.emit('user-disconnected',users[socket.id]);
         delete users[socket.id];
         io.sockets.emit('online-users', users);
