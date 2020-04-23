@@ -57,7 +57,8 @@ socket.on('chat', function(data){
     {
       output.innerHTML += '<div id="msg"><strong>'+data.handle+': </strong><br><div style="font-size: 18px;font-family:sans-serif;padding: 5px 0px;">'+data.message+'</div><div id="chat-time">'+data.time+'</div></div><br>';
     }
-    
+    $('#chat-window').scrollTop($('#chat-window')[0].scrollHeight);
+
 });
 
 // Typing Listener
