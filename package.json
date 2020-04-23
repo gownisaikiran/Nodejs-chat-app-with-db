@@ -1,0 +1,26 @@
+{
+  "name": "websockets-demo",
+  "version": "1.0.0",
+  "description": "A chat application using WebSockets",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "",
+    "url": ""
+  },
+  "author": "Sai Kiran Gowni",
+  "dependencies": {
+    "express": "^4.15.2",
+    "git": "^0.1.5",
+    "mysql": "^2.18.1",
+    "npm-git-install": "^0.3.0",
+    "socket.io": "^2.3.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.11.0"
+  },
+  "keywords": []
+}
