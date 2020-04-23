@@ -68,11 +68,11 @@ io.on('connection', (socket) => {
     // Handle chat event
     socket.on('chat', (data) => {
         // console.log(data);
-        var sql = "INSERT INTO messages VALUES ('','msg','"+data.handle+"','"+data.message+"','"+data.time+"')";
-        con.query(sql, function (err, result) {
-            if (err) throw err;
-            console.log("1 record inserted");
-          });
+        // var sql = "INSERT INTO messages VALUES ('','msg','"+data.handle+"','"+data.message+"','"+data.time+"')";
+        // con.query(sql, function (err, result) {
+        //     if (err) throw err;
+        //     console.log("1 record inserted");
+        //   });
         io.sockets.emit('chat', data);
     });
 
