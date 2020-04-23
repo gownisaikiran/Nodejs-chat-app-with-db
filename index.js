@@ -58,7 +58,7 @@ io.on('connection', (socket) => {
     socket.on('disconnect', () => {
         //console.log(Object.keys(users).length)
         //if(true){
-        console.log(users[socket.id].name+" left chat");
+        //console.log(users[socket.id].name+" left chat");
         socket.broadcast.emit('user-disconnected',users[socket.id]);
         delete users[socket.id];
         io.sockets.emit('online-users', users);
