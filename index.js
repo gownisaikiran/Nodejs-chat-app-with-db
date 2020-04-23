@@ -1,11 +1,11 @@
 var express = require('express');
 var socket = require('socket.io');
-var mysql = require('mysql');
+// var mysql = require('mysql');
 var port = process.env.PORT;
 // App setup
 var app = express();
 var server = app.listen(port, function(){
-    console.log('listening for requests on port');
+    console.log('listening for requests on port'+server.address().port);
 });
 
 // Static files (Middleware method : app.use)
@@ -17,28 +17,28 @@ var io = socket(server);
 app.use(express.json());
 
 // DataBase Connection
-var con = mysql.createConnection({
-    host: "sql205.epizy.com",
-    user: "epiz_25609731",
-    password: "Hsvi@123",
-    database : "epiz_25609731_chat_db"
-  });
+// var con = mysql.createConnection({
+//     host: "sql205.epizy.com",
+//     user: "epiz_25609731",
+//     password: "Hsvi@123",
+//     database : "epiz_25609731_chat_db"
+//   });
   
-con.connect(function(err) {
-if (err) throw err;
-console.log("Mysql Database Connected!");
-});
+// con.connect(function(err) {
+// if (err) throw err;
+// console.log("Mysql Database Connected!");
+// });
 
 // API for getting Chat Messages
-app.get('/api/messages',(req,res)=>{
-    // const messages = [];
-    var sql = "SELECT * FROM messages;";
-        con.query(sql, function (err, result, fields) {
-        if (err) throw err;
-        res.send(result);
-        });  
+// app.get('/api/messages',(req,res)=>{
+//     // const messages = [];
+//     var sql = "SELECT * FROM messages;";
+//         con.query(sql, function (err, result, fields) {
+//         if (err) throw err;
+//         res.send(result);
+//         });  
         
-})
+// })
 
 
 const users = {};

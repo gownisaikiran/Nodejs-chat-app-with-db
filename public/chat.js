@@ -92,21 +92,21 @@ socket.on('user-disconnected', function(data){
 });
 
 
-$(document).ready(function(){
-    $.ajax({url: "./api/messages", 
-    success: function(result)
-    {
-        console.log(result.length);
-        console.log(result[0].time);
-        for (index = 0; index < result.length; index++) {
-            if(result[index].name == handle.value)
-            {
-                output.innerHTML += '<div id="msg" style="margin-left: 60%;"><div style="font-size: 18px;font-family:sans-serif;padding: 5px 0px;">'+result[index].message+'</div><div id="chat-time">'+result[index].time+'</div></div><br>'; 
-            }
-            else{
-                output.innerHTML += '<div id="msg"><strong>'+result[index].name+': </strong><br><div style="font-size: 18px;font-family:sans-serif;padding: 5px 0px;">'+result[index].message+'</div><div id="chat-time">'+result[index].time+'</div></div><br>';   
-            }
-        }
-    }
-    });
-});
+// $(document).ready(function(){
+//     $.ajax({url: "./api/messages", 
+//     success: function(result)
+//     {
+//         console.log(result.length);
+//         console.log(result[0].time);
+//         for (index = 0; index < result.length; index++) {
+//             if(result[index].name == handle.value)
+//             {
+//                 output.innerHTML += '<div id="msg" style="margin-left: 60%;"><div style="font-size: 18px;font-family:sans-serif;padding: 5px 0px;">'+result[index].message+'</div><div id="chat-time">'+result[index].time+'</div></div><br>'; 
+//             }
+//             else{
+//                 output.innerHTML += '<div id="msg"><strong>'+result[index].name+': </strong><br><div style="font-size: 18px;font-family:sans-serif;padding: 5px 0px;">'+result[index].message+'</div><div id="chat-time">'+result[index].time+'</div></div><br>';   
+//             }
+//         }
+//     }
+//     });
+// });
